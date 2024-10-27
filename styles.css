@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #f9cedf, #ffe4e1);
+    background: linear-gradient(135deg, #f9cedf, #ffe4e1), url('surprise.jpg'); /* Add the image URL here */
     display: flex;
     justify-content: center;
     align-items: center;
