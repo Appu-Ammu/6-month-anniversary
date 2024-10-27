@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clue 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Clue 1: Our First Romantic Date 💖</h1>
+        <p>Close your eyes and remember the magical evening we shared on our first romantic date. What was the date of that unforgettable moment? Please enter it as <strong>MM/DD/YYYY</strong>.</p>
+        <input type="text" id="answer" placeholder="MM/DD/YYYY">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="message"></p>
+    </div>
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById("answer").value;
+            const correctAnswer = "07/10/2024"; // Your first romantic date
+
+            if (answer === correctAnswer) {
+                window.location.href = "clue2.html";
+            } else {
+                document.getElementById("message").textContent = "Oops! That's not quite right. Try again! 😊";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clue 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Clue 2: Our Dream House Name 🏡</h1>
+        <p>Think about the name of our dream house that we've always talked about. What is it?</p>
+        <input type="text" id="answer" placeholder="Your answer">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById("answer").value.toLowerCase();
+            if (answer === "harikrishna") { // Your dream house name
+                window.location.href = "final.html";
+            } else {
+                document.getElementById("message").textContent = "Oops! Give it another try.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Amrutha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hi Ammu! 💖</h1>
+        <p>You are a precious gift from God, making every moment feel like magic. It's been an incredible 6 months, and I'm so grateful for you.</p>
+        <p>Are you ready for a little adventure that shows just how much you mean to me? 😄</p>
+        
+        <input type="text" id="fullName" placeholder="full name (in lowercase)">
+        <button onclick="startHunt()">Start the Hunt</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function startHunt() {
+            const fullName = document.getElementById("fullName").value.trim();
+            
+            if (fullName === "amrutha hareesh") {
+                window.location.href = "clue1.html";
+            } else {
+                document.getElementById("message").textContent = "Hmm, are you sure that’s your name? Try again! 😊";
+            }
+        }
+    </script>
+</body>
+</html>
