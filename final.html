@@ -42,12 +42,33 @@
             object-fit: cover;
             margin: 20px auto;
         }
-        #giftImage {
+        #giftImageContainer {
             display: none;
+            position: relative;
             width: 100%;
             max-width: 600px;
             margin: 20px auto;
             border-radius: 10px;
+        }
+        #giftImage {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 102, 178, 0.8);
+            padding: 10px 20px;
+            font-size: 1.5em;
+            color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+        }
+        .play-button:hover {
+            background-color: rgba(255, 51, 133, 0.8);
         }
     </style>
 </head>
@@ -66,9 +87,9 @@
             <button class="prompt-button" onclick="showVideo()">Memory Video</button>
         </div>
         
-        <div id="giftMessage" style="display: none; margin-top: 20px; color: #ff66b2;">
-            🎁 Here’s your special surprise gift! 💝
+        <div id="giftImageContainer">
             <img id="giftImage" src="surprise.jpg" alt="Gift Image">
+            <div class="play-button" onclick="playSong()">▶</div>
         </div>
         
         <video id="memoryVideo" controls>
@@ -76,7 +97,7 @@
             Your browser does not support the video tag.
         </video>
 
-        <audio id="surpriseSong" src="https://github.com/Appu-Ammu/6-month-anniversary/raw/refs/heads/main/Kiccha%20Sudeep%20Family%20%E2%9C%A8%E2%9D%A4%EF%B8%8F%20_%20Priya%20Sudeep%20_%20@ChittaraMedia%20%5B%20ezmp3.cc%20%5D.mp3"></audio> <!-- Add your song file path here -->
+        <audio id="surpriseSong" src="https://github.com/Appu-Ammu/6-month-anniversary/raw/refs/heads/main/Kiccha%20Sudeep%20Family%20%E2%9C%A8%E2%9D%A4%EF%B8%8F%20_%20Priya%20Sudeep%20_%20@ChittaraMedia%20%5B%20ezmp3.cc%20%5D.mp3"></audio>
 
         <p style="margin-top: 20px;">I can't wait for us to celebrate together! 💖</p>
     </div>
@@ -84,21 +105,21 @@
     <script>
         function requestGift() {
             alert("This is a small surprise request from your husband, Hareesh. 💖 Hope you enjoy it!");
-            document.getElementById("giftMessage").style.display = "block";
-            document.getElementById("giftImage").style.display = "block";
+            document.getElementById("giftImageContainer").style.display = "block";
             document.getElementById("memoryVideo").style.display = "none";
-            
-            // Play the surprise song
-            var song = document.getElementById("surpriseSong");
-            song.play();
+            document.querySelector('.play-button').style.display = "block";
         }
         
+        function playSong() {
+            var song = document.getElementById("surpriseSong");
+            song.play();
+            document.querySelector('.play-button').style.display = "none"; // Hide play button after clicking
+        }
+
         function showVideo() {
             document.getElementById("memoryVideo").style.display = "block";
-            document.getElementById("giftMessage").style.display = "none";
-            document.getElementById("giftImage").style.display = "none";
+            document.getElementById("giftImageContainer").style.display = "none";
             
-            // Stop the song if it's playing
             var song = document.getElementById("surpriseSong");
             song.pause();
             song.currentTime = 0;
