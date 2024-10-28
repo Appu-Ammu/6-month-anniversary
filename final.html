@@ -40,17 +40,15 @@
             max-width: 600px;
             height: 900px;
             object-fit: cover;
-            margin: 20px auto; /* Centers the video horizontally */
+            margin: 20px auto;
         }
-
         #giftImage {
             display: none;
             width: 100%;
             max-width: 600px;
-            margin: 20px auto; /* Centers the image horizontally */
+            margin: 20px auto;
             border-radius: 10px;
         }
-
     </style>
 </head>
 <body>
@@ -74,9 +72,11 @@
         </div>
         
         <video id="memoryVideo" controls>
-            <source src="6th month .mp4" type="video/mp4">
+            <source src="6th month.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+
+        <audio id="surpriseSong" src="song.mp3"></audio> <!-- Add your song file path here -->
 
         <p style="margin-top: 20px;">I can't wait for us to celebrate together! 💖</p>
     </div>
@@ -87,12 +87,21 @@
             document.getElementById("giftMessage").style.display = "block";
             document.getElementById("giftImage").style.display = "block";
             document.getElementById("memoryVideo").style.display = "none";
+            
+            // Play the surprise song
+            var song = document.getElementById("surpriseSong");
+            song.play();
         }
         
         function showVideo() {
             document.getElementById("memoryVideo").style.display = "block";
             document.getElementById("giftMessage").style.display = "none";
             document.getElementById("giftImage").style.display = "none";
+            
+            // Stop the song if it's playing
+            var song = document.getElementById("surpriseSong");
+            song.pause();
+            song.currentTime = 0;
         }
     </script>
 </body>
